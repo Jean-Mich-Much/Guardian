@@ -9,13 +9,13 @@ Guardian sauvegarde vos documents sur une clé USB ou un disque externe, en quel
 
 ## Installer (Windows 11)
 
-Téléchargez l'installateur depuis la page **Releases** du dépôt, ou depuis https://iactu.info/download. Vérifiez le SHA-256 indiqué avec la version.
+Téléchargez l'installateur uniquement depuis https://iactu.info/download. Ce dépôt ne contient que le code source : aucun exécutable n'y est publié. Vérifiez le SHA-256 indiqué avec le téléchargement.
 
 L'installateur n'est pas signé pour l'instant : Windows peut afficher un avertissement SmartScreen. Détails dans [doc/installation_windows.md](doc/installation_windows.md).
 
 ### Vérifier le téléchargement
 
-Chaque version est publiée avec un fichier `SHA256SUMS.txt` (une ligne par fichier : empreinte, puis nom). Dans PowerShell, depuis le dossier du téléchargement :
+Chaque version est publiée sur la page de téléchargement avec un fichier `SHA256SUMS.txt` (une ligne par fichier : empreinte, puis nom). Dans PowerShell, depuis le dossier du téléchargement :
 
 ```
 Get-FileHash .\Installer-Guardian.exe -Algorithm SHA256
