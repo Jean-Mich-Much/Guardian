@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guardian</title>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/screens.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <main class="guardian-shell">
+        <header class="app-header">
+            <button class="brand" type="button" data-action="home" aria-label="Guardian">
+                <span class="brand-icon" aria-hidden="true">🛡️</span>
+                <span>
+                    <strong data-i18n="app.title"></strong>
+                    <small data-i18n="app.tagline"></small>
+                </span>
+            </button>
+            <div class="header-actions">
+                <button id="about-button" class="about-link" type="button" data-i18n="home.about"></button>
+                <label class="language-picker">
+                    <span data-i18n="language.label"></span>
+                    <select id="language-select" aria-label="Language">
+                        <option value="fr" data-i18n="language.fr"></option>
+                        <option value="en" data-i18n="language.en"></option>
+                    </select>
+                </label>
+            </div>
+        </header>
+
+        <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title">
+            <h2 id="about-title" data-i18n="home.about"></h2>
+            <p>
+                <strong data-i18n="home.contact_webmaster"></strong>
+                <span class="contact-address" data-user="33imej" data-website="moc.liamg"></span>
+            </p>
+            <p class="credits" data-i18n="home.credits"></p>
+            <details class="license-details">
+                <summary data-i18n="home.license"></summary>
+                <pre id="license-text" tabindex="0"></pre>
+            </details>
+            <button id="about-close" class="button button-secondary" type="button" data-i18n="home.about_close"></button>
+        </dialog>
+
+        <section id="screen-home" class="screen is-active" aria-labelledby="home-title">
+            <div class="screen-content home-content">
+                <div class="home-copy">
+                    <h1 id="home-title" data-i18n="home.title"></h1>
+                    <p data-i18n="home.subtitle"></p>
+                </div>
+                <div class="home-actions">
+                    <button id="save-photos-button" class="button button-primary" type="button">
+                        <span data-i18n="home.save_photos"></span>
+                    </button>
+                    <button id="save-all-button" class="button button-primary" type="button">
+                        <span data-i18n="home.save_all"></span>
+                    </button>
+                    <button id="restore-button" class="button button-secondary" type="button">
+                        <span data-i18n="home.restore"></span>
+                    </button>
+                    <div class="source-picker">
+                        <button
+                            id="save-folder-button"
+                            class="button button-link"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="source-picker-options"
+                        >
+                            <span data-i18n="home.save_folder"></span>
+                        </button>
+                        <div id="source-picker-options" class="source-picker-options" hidden>
+                            <button id="add-folder-button" class="button button-secondary" type="button">
+                                <span data-i18n="home.add_folder"></span>
+                            </button>
+                            <button id="add-files-button" class="button button-secondary" type="button">
+                                <span data-i18n="home.add_files"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <button id="save-custom-button" class="button button-secondary" type="button" disabled>
+                        <span data-i18n="home.save_custom"></span>
+                    </button>
+                </div>
+                <section class="custom-folders" aria-labelledby="custom-folders-title">
+                    <h2 id="custom-folders-title" data-i18n="home.custom_folders"></h2>
+                    <p data-i18n="home.custom_folders_help"></p>
+                    <ul id="custom-folder-list"></ul>
+                    <div id="folder-message" class="message-banner" role="status" hidden></div>
+                </section>
+                <aside id="usb-status" class="usb-status" aria-live="polite">
+                    <span class="usb-dot" aria-hidden="true"></span>
+                    <div>
+                        <strong id="usb-status-title" data-i18n="home.no_usb"></strong>
+                        <small id="usb-status-help" data-i18n="home.usb_help"></small>
+                    </div>
+                </aside>
+                <label id="usb-choice-wrap" class="usb-choice" hidden>
+                    <span data-i18n="home.choose_usb"></span>
+                    <select id="usb-choice" aria-label="USB destination"></select>
+                </label>
+            </div>
+        </section>
+
+        <section id="screen-diagnostic" class="screen" aria-labelledby="diagnostic-title">
+            <div class="diagnostic-layout">
+                <div class="screen-content">
+                    <header class="screen-heading">
+                        <h1 id="diagnostic-title" data-i18n="diagnostic.title"></h1>
+                        <p data-i18n="diagnostic.subtitle"></p>
+                    </header>
+                    <fieldset class="diagnostic-grid">
+                        <legend data-i18n="diagnostic.categories"></legend>
+                        <label class="diagnostic-card">
+                            <input type="checkbox" name="backup-category" value="photos" checked>
+                            <span class="diagnostic-icon" aria-hidden="true">📷</span>
+                            <strong id="photo-count">0</strong>
+                            <small data-i18n="diagnostic.photos"></small>
+                        </label>
+                        <label class="diagnostic-card">
+                            <input type="checkbox" name="backup-category" value="videos" checked>
+                            <span class="diagnostic-icon" aria-hidden="true">🎬</span>
+                            <strong id="video-count">0</strong>
+                            <small data-i18n="diagnostic.videos"></small>
+                        </label>
+                        <label class="diagnostic-card">
+                            <input type="checkbox" name="backup-category" value="documents" checked>
+                            <span class="diagnostic-icon" aria-hidden="true">📄</span>
+                            <strong id="document-count">0</strong>
+                            <small data-i18n="diagnostic.documents"></small>
+                        </label>
+                        <label class="diagnostic-card">
+                            <input type="checkbox" name="backup-category" value="music" checked>
+                            <span class="diagnostic-icon" aria-hidden="true">🎵</span>
+                            <strong id="music-count">0</strong>
+                            <small data-i18n="diagnostic.music"></small>
+                        </label>
+                        <label class="diagnostic-card">
+                            <input type="checkbox" name="backup-category" value="other" checked>
+                            <span class="diagnostic-icon" aria-hidden="true">🗂️</span>
+                            <strong id="other-count">0</strong>
+                            <small data-i18n="diagnostic.other"></small>
+                        </label>
+                    </fieldset>
+                    <details id="backup-options" class="backup-options">
+                        <summary data-i18n="diagnostic.options"></summary>
+                        <div class="backup-options-body">
+                            <div class="backup-option-section">
+                                <label class="checkbox-line">
+                                    <input id="limit-file-size-enabled" type="checkbox">
+                                    <span data-i18n="diagnostic.limit_size"></span>
+                                    <input
+                                        id="max-file-size"
+                                        type="number"
+                                        min="1"
+                                        max="1048576"
+                                        step="1"
+                                        value="256"
+                                        disabled
+                                    >
+                                    <span data-i18n="common.units.mb"></span>
+                                </label>
+                                <small data-i18n="diagnostic.limit_help"></small>
+                            </div>
+                            <div class="backup-option-section">
+                                <label class="checkbox-line">
+                                    <input id="exclude-items-enabled" type="checkbox">
+                                    <span data-i18n="diagnostic.enable_exclusions"></span>
+                                </label>
+                                <div id="excluded-items-controls" hidden>
+                                    <div class="excluded-items-actions">
+                                        <button id="exclude-folder-button" class="button button-secondary" type="button" data-i18n="diagnostic.exclude_folder"></button>
+                                        <button id="exclude-files-button" class="button button-secondary" type="button" data-i18n="diagnostic.exclude_files"></button>
+                                    </div>
+                                    <ul id="excluded-items-list" class="excluded-items-list"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                    <div class="space-summary">
+                        <div>
+                            <span data-i18n="diagnostic.required"></span>
+                            <strong id="required-space">0</strong>
+                        </div>
+                        <div>
+                            <span data-i18n="diagnostic.available"></span>
+                            <strong id="available-space">0</strong>
+                        </div>
+                    </div>
+                    <div id="diagnostic-message" class="message-banner" role="status" hidden></div>
+                    <label id="diagnostic-usb-choice-wrap" class="usb-choice" hidden>
+                        <span data-i18n="home.choose_usb"></span>
+                        <select id="diagnostic-usb-choice" aria-label="USB destination"></select>
+                    </label>
+                </div>
+                <div class="screen-actions">
+                    <button id="diagnostic-back" class="button button-soft" type="button" data-i18n="diagnostic.back"></button>
+                    <button id="start-backup" class="button button-primary" type="button" data-i18n="diagnostic.start"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-progress" class="screen" aria-labelledby="progress-title">
+            <div class="screen-content progress-content">
+                <header class="screen-heading">
+                    <h1 id="progress-title" data-i18n="progress.title"></h1>
+                    <p data-i18n="progress.subtitle"></p>
+                </header>
+                <div class="progress-card">
+                    <div class="progress-label">
+                        <span data-i18n="progress.progress"></span>
+                        <strong id="progress-percent">0%</strong>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <div class="progress-details">
+                        <span><span data-i18n="progress.remaining"></span> : <strong id="remaining-time" data-i18n="progress.calculating"></strong></span>
+                        <span><span data-i18n="progress.current"></span> : <strong id="current-file" data-i18n="progress.none"></strong></span>
+                    </div>
+                </div>
+                <div class="screen-actions">
+                    <button id="pause-button" class="button button-soft" type="button" data-i18n="progress.pause"></button>
+                    <button id="cancel-button" class="button button-danger" type="button" data-i18n="progress.cancel"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-result" class="screen" aria-labelledby="result-title">
+            <div class="screen-content result-content">
+                <div class="result-badge" aria-hidden="true">✅</div>
+                <h1 id="result-title" data-i18n="result.title"></h1>
+                <p id="result-subtitle" data-i18n="result.subtitle"></p>
+                <div class="result-grid">
+                    <article><strong id="copied-count">0</strong><small data-i18n="result.copied"></small></article>
+                    <article><strong id="skipped-count">0</strong><small data-i18n="result.skipped"></small></article>
+                    <article><strong id="failed-count">0</strong><small data-i18n="result.failed"></small></article>
+                </div>
+                <div id="category-summary" class="message-banner" role="status"></div>
+                <details id="uncopied-details" class="uncopied-details" hidden>
+                    <summary data-i18n="result.uncopied"></summary>
+                    <ul id="uncopied-list"></ul>
+                </details>
+                <div class="archive-location">
+                    <span data-i18n="result.archive"></span>
+                    <strong id="archive-path"></strong>
+                </div>
+                <div class="screen-actions">
+                    <button id="result-home" class="button button-soft" type="button" data-i18n="result.home"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-restore" class="screen" aria-labelledby="restore-title">
+            <div class="restore-layout">
+                <div class="screen-content restore-content">
+                    <header class="screen-heading">
+                        <h1 id="restore-title" data-i18n="restore.title"></h1>
+                        <p data-i18n="restore.subtitle"></p>
+                    </header>
+                    <div id="restore-message" class="message-banner" role="status"></div>
+                    <fieldset class="restore-password">
+                        <legend data-i18n="restore.location"></legend>
+                        <p data-i18n="restore.location_help"></p>
+                        <strong id="restore-location-path"></strong>
+                        <div class="restore-location-actions">
+                            <button id="restore-location-button" class="button button-secondary" type="button" data-i18n="restore.choose_destination"></button>
+                            <button id="restore-location-reset" class="button button-soft" type="button" data-i18n="restore.use_automatic" disabled></button>
+                        </div>
+                    </fieldset>
+                    <p class="restore-overwrite-policy" data-i18n="restore.overwrite_policy"></p>
+                    <fieldset class="restore-categories">
+                        <legend data-i18n="restore.categories"></legend>
+                        <label><input type="checkbox" name="restore-category" value="documents"> <span data-i18n="restore.documents"></span></label>
+                        <label><input type="checkbox" name="restore-category" value="photos"> <span data-i18n="restore.photos"></span></label>
+                        <label><input type="checkbox" name="restore-category" value="music"> <span data-i18n="restore.music"></span></label>
+                        <label><input type="checkbox" name="restore-category" value="videos"> <span data-i18n="restore.videos"></span></label>
+                        <label><input type="checkbox" name="restore-category" value="other"> <span data-i18n="restore.other"></span></label>
+                    </fieldset>
+                </div>
+                <div class="screen-actions">
+                    <button id="restore-back" class="button button-soft" type="button" data-i18n="restore.back"></button>
+                    <button id="start-restore" class="button button-primary" type="button" data-i18n="restore.restore"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

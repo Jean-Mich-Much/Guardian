@@ -1,0 +1,200 @@
+LICENCE GUARDIAN - SOURCES CONSULTABLES, TOUS DROITS RÉSERVÉS
+Version 1.0 - SPDX : LicenseRef-Guardian-Source-Available-1.0
+
+Copyright (c) 2026 Jean-Michel GURGUI (alias Jean-Mich-Much sur GitHub). Tous droits réservés.
+
+Les présentes conditions s'appliquent au code source, à la documentation et aux
+ressources propres à Guardian publiés dans ce dépôt (le « Code »). Elles sont
+rédigées en droit français. En consultant, copiant ou utilisant le Code, vous
+les acceptez. Si vous ne les acceptez pas, vous n'avez aucun droit sur le Code
+autre que ceux que la loi vous reconnaît.
+
+Ce Code est publié pour être lu, compris et vérifié. Ce n'est pas un logiciel
+libre ni open source au sens de l'Open Source Initiative.
+
+1. TITULAIRE
+   Le titulaire des droits d'auteur est Jean-Michel GURGUI, alias
+   Jean-Mich-Much, domicilié à Bordeaux (France) (le « Titulaire »).
+   Contact : adresse affichée dans le lien « À propos » de Guardian et en pied
+   de page de https://iactu.info.
+
+2. DROITS ACCORDÉS
+   Le Titulaire vous accorde, à titre gratuit, non exclusif, non cessible, non
+   sous-licenciable, pour le monde entier et pour la durée de protection des
+   droits d'auteur, le droit de :
+   a) consulter et lire le Code, et l'étudier pour en comprendre le fonctionnement ;
+   b) exécuter le Code depuis ses sources et le compiler pour votre usage
+      strictement personnel, non commercial et non professionnel, y compris pour
+      l'évaluer ou vérifier la correspondance entre les sources et les
+      exécutables publiés ;
+   c) modifier le Code pour cet usage personnel, sans diffuser le résultat ;
+   d) faire une copie sur la plateforme GitHub dans les conditions de ses
+      conditions d'utilisation (fork) et proposer des corrections au Titulaire.
+
+3. DROITS NON ACCORDÉS
+   Sauf accord écrit préalable du Titulaire, tout autre acte est interdit, en
+   particulier :
+   a) tout usage commercial, professionnel, associatif ou au sein d'une
+      entreprise, d'une administration ou d'un établissement d'enseignement ;
+   b) la reproduction, la représentation, la diffusion, la publication ou la
+      mise à disposition du Code, de tout ou partie, modifié ou non, sur un
+      autre support ou une autre plateforme que GitHub ;
+   c) la diffusion d'exécutables, d'installateurs ou de paquets issus du Code ;
+   d) la reprise de tout ou partie du Code dans un autre logiciel, service ou
+      projet, quelle que soit sa licence ;
+   e) la vente, la location, le prêt ou l'offre en service du Code ou d'un
+      dérivé ;
+   f) la suppression ou la modification des mentions de droits d'auteur et de
+      la présente licence.
+   Pour obtenir une autorisation, notamment commerciale, contactez le Titulaire.
+   Une autorisation peut être payante.
+
+4. DROITS RECONNUS PAR LA LOI
+   Rien dans la présente licence ne limite les droits que la loi vous reconnaît
+   d'ordre public, notamment ceux de l'article L. 122-6-1 du Code de la
+   propriété intellectuelle : actes nécessaires à l'utilisation conforme du
+   logiciel, copie de sauvegarde, observation et étude du fonctionnement,
+   décompilation à des fins d'interopérabilité dans les limites légales. Les
+   exceptions au droit d'auteur prévues par la loi restent applicables.
+
+5. FOUILLE DE TEXTES ET DE DONNÉES
+   Le Titulaire se réserve expressément le droit de s'opposer à l'extraction et
+   à la fouille de textes et de données sur le Code (article L. 122-5-3 du Code
+   de la propriété intellectuelle). Le Code ne peut pas être utilisé pour
+   constituer un jeu de données d'entraînement de modèles d'intelligence
+   artificielle sans accord écrit du Titulaire.
+
+6. EXÉCUTABLES ET INSTALLATEURS
+   Les exécutables et installateurs de Guardian publiés par le Titulaire sont
+   distribués séparément, pour un usage gratuit, avec un don libre et
+   facultatif. Ils sont régis par les conditions indiquées au moment de leur
+   téléchargement, et non par les droits d'accès au Code de la présente licence.
+   Un don ne confère aucun droit sur le Code.
+
+7. CONTRIBUTIONS
+   Si vous proposez une modification ou un correctif, vous garantissez en être
+   l'auteur et avoir le droit de la proposer. Vous accordez au Titulaire, à titre
+   gratuit, non exclusif, pour le monde entier et pour la durée de protection
+   des droits, le droit de l'utiliser, la modifier, la reproduire et la
+   diffuser, y compris sous une licence différente et dans des versions
+   commerciales de Guardian. Vous conservez vos droits d'auteur et votre droit
+   à la paternité.
+
+8. COMPOSANTS TIERS
+   Les composants tiers (polices, bibliothèques) restent soumis à leur propre
+   licence, indiquée dans THIRD_PARTY_NOTICES.md. La présente licence ne
+   s'applique pas à eux et ne leur retire aucun droit.
+
+9. ABSENCE DE GARANTIE ET RESPONSABILITÉ
+   Le Code est fourni « en l'état », sans garantie de fonctionnement,
+   d'adéquation à un usage ou d'absence d'erreurs. Guardian manipule des
+   fichiers personnels : vérifiez toujours vos sauvegardes. Dans la mesure
+   permise par la loi, le Titulaire n'est pas responsable des dommages indirects
+   ou des pertes de données résultant de l'usage du Code. Cette limitation ne
+   s'applique ni en cas de faute lourde ou dolosive, ni pour les dommages
+   corporels, et ne prive pas un consommateur des garanties et droits que la
+   loi lui reconnaît.
+
+10. DURÉE ET RÉSILIATION
+    La licence dure aussi longtemps que durent les droits d'auteur sur le Code.
+    En cas de manquement aux présentes, vos droits prennent fin de plein droit,
+    sans préjudice de tout recours du Titulaire. Vous devez alors cesser tout
+    usage et supprimer vos copies, hors celles que la loi vous autorise à
+    conserver.
+
+11. CONTREFAÇON
+    Tout acte non autorisé peut constituer une contrefaçon engageant votre
+    responsabilité civile et pénale, selon le Code de la propriété
+    intellectuelle.
+
+12. DROIT APPLICABLE ET TRIBUNAUX
+    La présente licence, en tant que contrat, est régie par le droit français.
+    Les actions en contrefaçon peuvent être engagées dans tout pays où le Code
+    est utilisé ou exploité et sont jugées selon la loi de ce pays, comme le
+    prévoient les conventions internationales, dont la Convention de Berne.
+    Sous réserve des règles impératives de compétence, notamment celles
+    protégeant les consommateurs, les tribunaux français sont compétents pour
+    les litiges nés de la présente licence. En cas de divergence avec une
+    traduction, la version française fait foi.
+
+13. MODIFICATIONS DE LA LICENCE
+    Le Titulaire peut publier une nouvelle version de la licence pour les
+    versions futures du Code. Les copies déjà obtenues restent régies par la
+    version en vigueur à la date de leur obtention.
+
+--------------------------------------------------------------------------------
+ENGLISH TRANSLATION (provided for non-French readers; the French text prevails)
+
+GUARDIAN LICENSE - SOURCE AVAILABLE, ALL RIGHTS RESERVED, Version 1.0
+
+Copyright (c) 2026 Jean-Michel GURGUI (alias Jean-Mich-Much on GitHub). All rights reserved.
+
+These terms apply to the source code, documentation and Guardian-specific
+resources published in this repository (the "Code"). By viewing, copying or
+using the Code you accept them. If you do not accept them, you have no rights in
+the Code other than those the law grants you. The Code is published to be read,
+understood and verified. It is not free software and not open source in the
+sense of the Open Source Initiative.
+
+1. Licensor. The copyright holder is Jean-Michel GURGUI, alias Jean-Mich-Much,
+   residing in Bordeaux, France (the "Licensor"), contact: address shown under
+   "About" in Guardian and in the footer of https://iactu.info.
+2. Rights granted. Free of charge, non-exclusive, non-transferable, without the
+   right to sublicense, worldwide, for the duration of copyright protection, you
+   may: (a) view, read and study the Code; (b) run and compile the Code for your
+   strictly personal, non-commercial, non-professional use, including to evaluate
+   it or to check that published executables match the sources; (c) modify the
+   Code for that personal use without distributing the result; (d) fork it on
+   GitHub under GitHub's terms of service and send corrections to the Licensor.
+3. Rights not granted. Unless the Licensor agrees in writing beforehand, every
+   other act is prohibited, in particular: (a) any commercial, professional,
+   association, corporate, government or educational-institution use; (b) any
+   reproduction, communication, distribution or publication of the Code, in
+   whole or in part, modified or not, on any medium or platform other than
+   GitHub; (c) distributing executables, installers or packages built from the
+   Code; (d) reusing any part of the Code in another software, service or
+   project, whatever its license; (e) selling, renting, lending or offering the
+   Code or a derivative as a service; (f) removing or altering copyright notices
+   or this license. Permission, including commercial permission, may be
+   requested from the Licensor and may be paid.
+4. Statutory rights. Nothing in this license limits the mandatory rights granted
+   to you by applicable law, including copyright exceptions and the rights of
+   users of computer programs (for example in the European Union, Directive
+   2009/24/EC, and in France, article L. 122-6-1 of the Intellectual Property
+   Code).
+5. Text and data mining. The Licensor expressly reserves the right to opt out of
+   text and data mining of the Code. The Code must not be used to build training
+   datasets for artificial intelligence models without the Licensor's prior
+   written permission.
+6. Executables and installers. Executables and installers published by the
+   Licensor are distributed separately, free of charge, with an optional
+   voluntary donation. They are governed by the terms shown at download time. A
+   donation grants no right in the Code.
+7. Contributions. If you submit a change, you warrant that you are its author
+   and entitled to submit it. You grant the Licensor a free, non-exclusive,
+   worldwide license, for the duration of the rights, to use, modify, reproduce
+   and distribute it, including under a different license and in commercial
+   versions of Guardian. You keep your copyright and right of attribution.
+8. Third-party components remain under their own licenses, listed in
+   THIRD_PARTY_NOTICES.md. This license does not apply to them.
+9. No warranty; liability. The Code is provided "as is", without warranty of any
+   kind. Guardian handles personal files: always check your backups. To the
+   extent permitted by law, the Licensor is not liable for indirect damages or
+   data loss. This does not apply to gross negligence, willful misconduct or
+   personal injury, and does not deprive a consumer of mandatory statutory
+   rights.
+10. Term and termination. This license lasts as long as the copyright. If you
+    breach it, your rights end automatically, without prejudice to any remedy.
+    You must then stop using the Code and delete your copies, except those the
+    law allows you to keep.
+11. Infringement. Unauthorized acts may constitute copyright infringement under
+    the laws of the country where protection is claimed.
+12. Governing law. This license as a contract is governed by French law. Claims
+    of copyright infringement may be brought in any country where the Code is
+    used or exploited and are judged under the law of that country, as
+    international conventions (including the Berne Convention) provide. Subject
+    to mandatory jurisdiction rules, especially consumer protection rules,
+    French courts have jurisdiction for disputes arising from this license.
+13. Changes. The Licensor may publish a new version of this license for future
+    versions of the Code. Copies already obtained remain governed by the version
+    in force when they were obtained.

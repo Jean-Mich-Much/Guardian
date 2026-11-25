@@ -1,0 +1,11 @@
+.guardian-build.lock
+.build-cache/
+__pycache__/
+*.py[cod]
+nuitka-crash-report.xml
+GuardianData/
+dist/
+*.exe
+*.log
+desktop.ini
+.vscode/

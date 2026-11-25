@@ -1,0 +1,201 @@
+.button {
+    min-height: 58px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-button);
+    padding: 14px 24px;
+    font-weight: 800;
+    transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button-primary {
+    border-color: var(--color-primary);
+    color: #ffffff;
+    background: var(--color-primary);
+    box-shadow: 0 12px 24px rgba(36, 107, 254, 0.22);
+}
+
+.button-primary:hover {
+    border-color: var(--color-primary-dark);
+    background: var(--color-primary-dark);
+}
+
+.button-secondary {
+    border-color: #b9ccec;
+    color: var(--color-primary-dark);
+    background: #ffffff;
+    box-shadow: 0 10px 26px rgba(41, 78, 120, 0.10);
+}
+
+.button-soft {
+    border-color: var(--color-border);
+    color: var(--color-ink);
+    background: #ffffff;
+}
+
+.button-danger {
+    border-color: #ecc4c4;
+    color: var(--color-danger);
+    background: var(--color-danger-soft);
+}
+
+.button-link {
+    min-height: 44px;
+    border: 0;
+    color: var(--color-muted);
+    background: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.screen-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.screen-actions .button {
+    min-width: 180px;
+}
+
+.password-panel {
+    display: grid;
+    margin: 14px 0 0;
+    padding: 16px 18px;
+}
+
+.password-panel legend {
+    padding: 0 8px;
+    font-weight: 800;
+}
+
+.password-panel small {
+    margin-top: 8px;
+    color: var(--color-muted);
+}
+
+.password-panel input[type="password"] {
+    width: min(420px, 100%);
+    min-height: 48px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 10px 12px;
+    margin-top: 12px;
+    color: var(--color-ink);
+    background: #ffffff;
+}
+
+.checkbox-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.checkbox-line input {
+    width: 22px;
+    height: 22px;
+}
+
+.restore-password input {
+    min-height: 50px;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    padding: 10px 12px;
+    color: var(--color-ink);
+    background: #ffffff;
+}
+
+.message-banner {
+    border: 1px solid #edcf8c;
+    border-radius: 16px;
+    margin-top: 14px;
+    padding: 14px 16px;
+    color: var(--color-warning);
+    background: var(--color-warning-soft);
+}
+
+.uncopied-details {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #ffffff;
+    text-align: left;
+}
+
+.uncopied-details summary {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+.uncopied-details ul {
+    max-height: 180px;
+    overflow: auto;
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+.progress-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 18px;
+    overflow: hidden;
+    border-radius: var(--radius-button);
+    background: #dde7f2;
+    box-shadow: inset 0 2px 4px rgba(25, 65, 110, 0.08);
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #246bfe 0%, #5b96ff 100%);
+    box-shadow: 0 3px 12px rgba(36, 107, 254, 0.28);
+    transition: width 260ms ease;
+}
+
+@media (max-width: 760px) {
+    .button {
+        min-height: 54px;
+    }
+
+    .screen-actions {
+        flex-direction: column-reverse;
+    }
+
+    .screen-actions .button {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 1921px) {
+    .button {
+        min-height: round(calc(58 / 1920 * 100vw), 1px);
+        padding: round(calc(14 / 1920 * 100vw), 1px) round(calc(24 / 1920 * 100vw), 1px);
+        font-size: round(calc(18 / 1920 * 100vw), 1px);
+    }
+
+    .progress-track {
+        height: round(calc(18 / 1920 * 100vw), 1px);
+    }
+}
