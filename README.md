@@ -13,6 +13,16 @@ Téléchargez l'installateur depuis la page **Releases** du dépôt, ou depuis h
 
 L'installateur n'est pas signé pour l'instant : Windows peut afficher un avertissement SmartScreen. Détails dans [doc/installation_windows.md](doc/installation_windows.md).
 
+### Vérifier le téléchargement
+
+Chaque version est publiée avec un fichier `SHA256SUMS.txt` (une ligne par fichier : empreinte, puis nom). Dans PowerShell, depuis le dossier du téléchargement :
+
+```
+Get-FileHash .\Installer-Guardian.exe -Algorithm SHA256
+```
+
+Comparez l'empreinte affichée à celle de `SHA256SUMS.txt`. Si elles diffèrent, le fichier est corrompu ou n'est pas celui publié : ne le lancez pas. L'empreinte prouve l'intégrité du fichier, pas l'identité de l'éditeur, puisque l'exécutable n'est pas signé. Les empreintes changent à chaque version.
+
 ## Lancer depuis les sources
 
 ```
