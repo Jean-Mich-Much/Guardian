@@ -19,6 +19,7 @@ Guardian sauvegarde vos documents sur une clé USB ou un disque externe, en quel
 - Les autres emplacements sélectionnés sont analysés selon les extensions de fichiers, puis copiés sous `Sauvegardes/Autres emplacements`, sans doublons.
 - Protection facultative par mot de passe (dérivation de clé scrypt et chiffrement AES via PyCryptodome).
 - Interface PyWebView (HTML/CSS/JS), noyau Python.
+- Son objectif est volontairement simple : brancher un support de stockage, cliquer sur « Sauver mes photos » ou « Sauver tous mes fichiers », puis laisser le logiciel faire le reste. En plus des dossiers habituels de l'utilisateur, Guardian recherche automatiquement d'autres documents importants à sauvegarder, même lorsqu'ils se trouvent dans des emplacements inhabituels. Cette recherche est intelligente : le logiciel évite de copier les logos, les fichiers système ou les sons de notification des applications. Il se concentre sur ce qui compte vraiment, à savoir les fichiers créés ou modifiés par l'utilisateur.
 
 ## Installation (Windows 11)
 
@@ -96,6 +97,9 @@ Guardian backs up your documents to a USB flash drive or an external drive in ju
 - Other selected locations are scanned by file extension and copied to `Sauvegardes/Autres emplacements`, without duplicates.
 - Optional password protection (scrypt key derivation and AES encryption via PyCryptodome).
 - PyWebView interface (HTML/CSS/JS), Python core.
+- Its goal is deliberately simple: connect a storage device, click "Save My Photos" or "Save All My Files", and let the software do the rest.
+In addition to the user's usual folders, Guardian automatically searches for other important documents to back up, even when they are stored in unusual locations.
+This search is intelligent: the software avoids copying application logos, system files, or notification sounds. Instead, it focuses on what really matters: files that were created or modified by the user.
 
 ## Install (Windows 11)
 
