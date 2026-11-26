@@ -88,6 +88,78 @@ Composants tiers : [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 # 🇬🇧 English
 
+The guardian of your memories.
+
+Guardian backs up your documents to a USB flash drive or an external hard drive in just a few clicks, with no technical jargon.
+
+- Recognized Windows folders (Documents, Pictures, Music, Videos, Desktop) copied in full to `Sauvegardes\Documents`, `Images`, etc.
+- Other locations scanned by file extension, copied to `Sauvegardes\Autres emplacements` without duplicates.
+- Optional password protection (scrypt + AES encryption via pycryptodome).
+- pywebview interface (HTML/CSS/JS), Python core.
+
+## Install (Windows 11)
+
+Download the installer exclusively from https://iactu.info/download. This repository contains only the source code: no executables are published here.
+
+The installer is currently unsigned: Windows may display a SmartScreen warning. More details in [doc/installation_windows.md](doc/installation_windows.md).
+
+### Verify the download
+
+Each release is published on the download page alongside a `SHA256SUMS.txt` file (one line per file: hash, then filename). In PowerShell, from your download folder:
+
+```powershell
+Get-FileHash .\Installer-Guardian.exe -Algorithm SHA256
+```
+
+Compare the displayed hash with the one in `SHA256SUMS.txt`. If they do not match, the file is corrupted or is not the one officially published: do not run it. The hash verifies file integrity, not publisher identity, as the executable is unsigned. Hashes change with every release.
+
+## Run from source
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+Tests: `python test.py`
+
+## Build
+
+Prerequisites: Python, Nuitka, a C compiler supported by Nuitka, and Inno Setup 7 for the installer.
+
+```powershell
+.\build_win_11.ps1               # Standalone Guardian.exe
+.\build_win_11.ps1 -Installed    # Variant intended for the installer
+.\build_installer_win.ps1        # Installer-Guardian.exe
+```
+
+See [doc/installation_windows.md](doc/installation_windows.md). Linux: `build_linux_kde_gnome.sh` (untested).
+
+## Structure
+
+| Folder | Role |
+| --- | --- |
+| `backend/` | Scanning, backup, encryption, storage device detection |
+| `frontend/` | User interface (HTML, CSS, JS, fr/en languages) |
+| `installer/` | Inno Setup script |
+| `doc/` | Module documentation |
+
+## Support the project
+
+Guardian is free software with a pay-what-you-want, optional donation model. If you find it useful, a donation helps fund [iactu.info](https://iactu.info) and its server:
+
+https://iactu.info/download
+
+## License
+
+Source-available, **all rights reserved**: you may read, study, run, and modify the code for personal, non-commercial use. Any redistribution, commercial or professional use, or reuse of the code in another project requires prior written permission from the author, which may be subject to a fee.
+
+This is not open-source software.
+
+French text with English translation: [LICENSE](LICENSE).
+
+Third-party components: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+
 The keeper of your memories.
 
 Guardian backs up your documents to a USB drive or external disk in just a few clicks, without technical jargon.
@@ -137,4 +209,24 @@ See [doc/installation_windows.md](doc/installation_windows.md). Linux: `build_li
 ## Project structure
 
 | Folder | Purpose |
-| --- | --- |
+| :--- | :--- |
+| `backend/` | Scanning, backup, encryption, storage device detection |
+| `frontend/` | User interface (HTML, CSS, JS, fr/en languages) |
+| `installer/` | Inno Setup script |
+| `doc/` | Module documentation |
+
+## Support the project
+
+Guardian is free software with a pay-what-you-want, optional donation model. If you find it useful, a donation helps fund [iactu.info](https://iactu.info) and its server:
+
+https://iactu.info
+
+## License
+
+Source-available, **all rights reserved**: you may read, study, run, and modify the code for personal, non-commercial use. Any redistribution, commercial or professional use, or reuse of the code in another project requires prior written permission from the author, which may be subject to a fee.
+
+This is not open-source software.
+
+French text with English translation: [LICENSE](LICENSE).
+
+Third-party components: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
