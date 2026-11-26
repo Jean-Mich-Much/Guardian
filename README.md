@@ -60,3 +60,74 @@ Le logiciel Guardian est gratuit, avec un don libre et facultatif. S'il vous est
 ## Licence
 
 Sources consultables, **tous droits réservés** : vous pouvez lire le code, l'étudier, le lancer et le modifier pour un usage personnel non commercial. Toute redistribution, tout usage commercial ou professionnel et toute reprise du code dans un autre projet nécessitent l'accord écrit préalable de l'auteur, qui peut être payant. Ce n'est pas un logiciel open source. Texte en français, avec traduction anglaise : [LICENSE](LICENSE). Composants tiers : [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+# Guardian
+
+Guardian backs up your documents to a USB drive or external disk in just a few clicks, without technical jargon.
+
+- Windows known folders (Documents, Pictures, Music, Videos, Desktop) are copied entirely into `Backups\Documents`, `Pictures`, etc.
+- Other locations are scanned by file extension and copied into `Backups\Other locations`, without duplicates.
+- Optional password protection (scrypt + AES encryption via pycryptodome).
+- PyWebView interface (HTML/CSS/JS), Python backend.
+
+## Install (Windows 11)
+
+Download the installer only from https://iactu.info/download. This repository contains source code only: no executables are published here. Verify the SHA-256 checksum provided with the download.
+
+The installer is currently unsigned: Windows may display a SmartScreen warning. See [doc/installation_windows.md](doc/installation_windows.md) for details.
+
+### Verify the download
+
+Each version is published on the download page with a `SHA256SUMS.txt` file (one line per file: checksum followed by filename). In PowerShell, from the download folder:
+
+```powershell
+Get-FileHash .\Installer-Guardian.exe -Algorithm SHA256
+```
+
+Compare the displayed checksum with the one listed in `SHA256SUMS.txt`. If they differ, the file is corrupted or is not the published file. Do not run it. The checksum verifies file integrity, not the publisher's identity, since the executable is not signed. Checksums change with every version.
+
+## Run from source
+
+```bash
+pip install -r requirements.txt
+python main.py
+```
+
+Tests:
+
+```bash
+python test.py
+```
+
+## Build
+
+Requirements: Python, Nuitka, a C compiler supported by Nuitka, and Inno Setup 7 for the installer.
+
+```powershell
+.\build_win_11.ps1               # standalone Guardian.exe
+.\build_win_11.ps1 -Installed    # version intended for the installer
+.\build_installer_win.ps1        # Installer-Guardian.exe
+```
+
+See [doc/installation_windows.md](doc/installation_windows.md). Linux: `build_linux_kde_gnome.sh` (not validated).
+
+## Project structure
+
+| Folder | Purpose |
+| --- | --- |
+| `backend/` | Analysis, backup, encryption, storage device detection |
+| `frontend/` | User interface (HTML, CSS, JS, French/English translations) |
+| `installer/` | Inno Setup script |
+| `doc/` | Module documentation |
+
+## Support the project
+
+Guardian is free software supported by optional donations. If you find it useful, a donation helps fund iactu.info and its server:
+
+https://iactu.info/download
+
+## License
+
+Source-available, **all rights reserved**: you may read, study, run, and modify the code for personal, non-commercial use. Any redistribution, commercial or professional use, or reuse of the code in another project requires prior written permission from the author, which may be subject to a licensing fee.
+
+This is not open-source software. French text, with English translation: [LICENSE](LICENSE). Third-party components: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
